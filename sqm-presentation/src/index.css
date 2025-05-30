@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: white;
+    color: #1f2937; /* text-gray-800 equivalent */
+  }
+}
+
+@layer components {
+  .slide-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    overflow: hidden;
+  }
+  
+  .slide-content {
+    max-width: 72rem; /* max-w-6xl */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .nav-link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    color: white;
+    transition-property: color;
+    transition-duration: 300ms;
+  }
+  
+  .nav-link:hover {
+    color: #00AA4F; /* sqm-green */
+  }
+  
+  .nav-active {
+    color: #00AA4F; /* sqm-green */
+    border-bottom-width: 2px;
+    border-color: #00AA4F; /* sqm-green */
+  }
+  
+  .slide-indicator {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    background-color: #d1d5db; /* bg-gray-300 */
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    transition-property: all;
+    transition-duration: 300ms;
+  }
+  
+  .slide-indicator-active {
+    background-color: #003057; /* sqm-blue */
+    width: 1.25rem;
+  }
+
+  .slide-title {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .slide-title {
+      font-size: 3rem; /* md:text-5xl */
+    }
+  }
+
+  .slide-subtitle {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 300; /* font-light */
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .slide-subtitle {
+      font-size: 1.875rem; /* md:text-3xl */
+    }
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-in {
+    animation: slideIn 0.5s ease-in-out;
+  }
+}
